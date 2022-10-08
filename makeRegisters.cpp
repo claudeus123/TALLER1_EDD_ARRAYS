@@ -10,7 +10,7 @@ makeRegisters::makeRegisters(){
 	fillArray(registers, 16);
 	fillArrayString(regions, 16);
 }
-
+//Relleno de los vectores con su respectivo formato
 void makeRegisters::fillArray(int vector[], int length){
 	for (int i = 0; i < length; i ++){
 		vector[i] = 0;
@@ -27,7 +27,7 @@ void makeRegisters::fillArrayString(string vector[], int length){
 	}
 }
 
-
+//Metodo SORT, implementado en caso de ser necesario, ordena la lista dado una referencia entregada
 void makeRegisters::swapStr(string array[],int number1, int number2){
 	string aux = array[number1];
 	array[number1] = array[number2];
@@ -51,14 +51,14 @@ void makeRegisters::sort(string reference[], string regions[], int registers[], 
 		}
 	}
 }
-
+//Imprime en el formato indicado
 void makeRegisters::printFormat(string array[], int arrayInt[],int length){
 	cout << "Codigo Region; registros" << endl;
 	for (int i = 0; i < length; i++){
 		cout << array[i] << "; " << arrayInt[i] << endl;
 	}
 }
-
+//Lee el archivo y los agrega a los arreglos
 void makeRegisters::readFile(string file){
 	ifstream myFileStream(file);
 	string code;
@@ -75,8 +75,9 @@ void makeRegisters::readFile(string file){
 	}	
 	myFileStream.close();
 }
-
+//Corresponde al destructor de la clase
 makeRegisters::~makeRegisters(){}
+//GETS
 string * makeRegisters::getRegions(){
 	return this->regions;
 }
