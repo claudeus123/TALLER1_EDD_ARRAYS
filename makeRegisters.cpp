@@ -60,7 +60,7 @@ void makeRegisters::printFormat(string array[], int arrayInt[],int length){
 }
 
 void makeRegisters::readFile(string file){
-	ifstream myFileStream("file.csv");
+	ifstream myFileStream(file);
 	string code;
 	string line;
 	int number;
